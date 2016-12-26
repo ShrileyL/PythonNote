@@ -1,4 +1,4 @@
-# Created by KevinLiu on 16/12/23.
+# Created by KevinLiu on 16/12/26.
 # Copyright © 2016年 KevinLiu. All rights reserved.
 # Target: count for frequences of word
 
