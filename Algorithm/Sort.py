@@ -1,0 +1,41 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Dec 31 09:51:27 2017
+
+@author: ShirleyLiu
+
+Purposes: This codes just be used to help understand algorithms,
+        to show algorithms use simply codes
+"""
+
+#Select Sort
+def findSmallest(arr):
+    smallest = arr[0]
+    smallest_index = 0
+    for i in range(1,len(arr)):
+        if smallest > arr[i]:
+            smallest = arr[i]
+            smallest_index = i
+    return smallest_index
+    
+def SelectSort(arr):
+    newArr = []
+    for i in range(len(arr)):
+        smallest = findSmallest(arr)
+        newArr.append(arr.pop(smallest))
+    return newArr
+    
+print(SelectSort([5,3,6,2,10]))
+print SelectSort([5,3,6,2,10])
+
+#Quick Sort
+def QuickSort(arr):
+    if len(arr) < 2:
+        return arr #base condition
+    else:
+        pivot = arr[0] #default pivot
+        less = [i for i in arr[1:] if i <= pivot]
+        larger = [i for i in arr[1:] if i > pivot]
+        return QuickSort(less) + [pivot] + QuickSort(larger)
+        
+print(QuickSort([10,5,3,2]))

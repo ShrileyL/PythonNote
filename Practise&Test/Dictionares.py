@@ -2,8 +2,19 @@
 """
 Created on Sat Dec 31 09:53:56 2016
 
-@author: KevinLiu
+@author: ShirleyLiu
 """
+# Structures of dict:
+#       dict includes "items" 
+#       each "item" consist of "key" - "values" (regard item as map)
+
+# get key, value, and items
+friends = {'Jack':24, 'Lucy':12, 'Bill':121}
+print friends.keys()
+print friends.values()
+print friends.items()
+for a,b in friends.items():
+    print a,b
 
 purse = dict()
 purse['clothes'] = 2
@@ -41,14 +52,6 @@ for word in words:
     counts[word] = counts.get(word,0) + 1
 print 'Counting: '
 print counts
-
-# get key, value, and items
-friends = {'Jack':24, 'Lucy':12, 'Bill':121}
-print friends.keys()
-print friends.values()
-print friends.items()
-for a,b in friends.items():
-    print a,b
     
 # counting pattern in word.txt
 #import os
