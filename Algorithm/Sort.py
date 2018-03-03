@@ -26,7 +26,7 @@ def SelectSort(arr):
     return newArr
     
 print(SelectSort([5,3,6,2,10]))
-print SelectSort([5,3,6,2,10])
+#print SelectSort([5,3,6,2,10])
 
 #Quick Sort
 def QuickSort(arr):
@@ -51,4 +51,42 @@ def BubbleSort(arr):
     
 alist = [54,26,93,17,77,31,44,55,20]
 BubbleSort(alist)
+print(alist)
+
+#Merge Sort
+def MergeSort(arr):
+    if len(arr) <= 1:
+        return
+
+    mid = len(arr) // 2
+    lefthalf = arr[:mid]
+    righthalf = arr[mid:]
+
+    MergeSort(lefthalf)
+    MergeSort(righthalf)
+
+    # merge two half into orignal arr
+    i = j = k = 0
+    while i < len(lefthalf) and j < len(righthalf):
+        if lefthalf[i] < righthalf[j]:
+            arr[k] = lefthalf[i]
+            i = i + 1
+        else:
+            arr[k] = righthalf[j]
+            j = j + 1
+        k = k + 1
+
+    while i < len(lefthalf):
+        arr[k] = lefthalf[i]
+        i = i + 1
+        k = k + 1
+
+    while j < len(righthalf):
+        arr[k] = righthalf[j]
+        j = j + 1
+        k = k + 1
+
+
+alist = [54,26,93,17,77,31,44,55,20]
+MergeSort(alist)
 print(alist)
